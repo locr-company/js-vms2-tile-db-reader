@@ -40,7 +40,7 @@ class SQLite
     /**
      * @returns {Buffer}
      */
-    getRawData(x: number, y: number, z: number, key: string, value: string = '', type: Type = 'polygons') {
+    getRawData(x: number, y: number, z: number, key: string, value: string = '', type: Type = 'polygons'): Buffer<ArrayBuffer> {
         switch (key) {
             case 'land':
             case 'terrain':
