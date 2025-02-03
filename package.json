@@ -1,0 +1,53 @@
+{
+    "name": "@locr-company/vms2-tile-db-reader",
+    "version": "0.1.0",
+    "description": "A class for reading tile data from a database.",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/locr-company/js-vms2-tile-db-reader"
+    },
+    "main": "src/js/Vms2TileDbReader.js",
+    "scripts": {
+        "test-with-coverage": "c8 npm run test",
+        "test": "mocha",
+        "tsc": "tsc",
+        "version": "npm run tsc && npm run test && ./update_deno.json_version.sh && git add deno.json"
+    },
+    "keywords": [
+        "progress"
+    ],
+    "author": "Ringo Leese <r.leese@locr.com>",
+    "license": "MIT",
+    "engines": {
+        "node": ">=16"
+    },
+    "dependencies": {
+        "better-sqlite3": "^11.8.1"
+    },
+    "devDependencies": {
+        "@sinonjs/fake-timers": "^14.0.0",
+        "@types/better-sqlite3": "^7.6.12",
+        "@types/mocha": "^10.0.6",
+        "@types/sinonjs__fake-timers": "^8.1.5",
+        "c8": "^10.1.2",
+        "chai": "^5.1.0",
+        "mocha": "^11.0.1",
+        "typescript": "^5.4.3"
+    },
+    "c8": {
+        "all": true,
+        "include": [
+            "src/**/*.js"
+        ],
+        "exclude": [
+            "test/**/*.js"
+        ],
+        "reporter": [
+            "lcov",
+            "text-summary",
+            "html"
+        ]
+    },
+    "deno": "./src/ts/mod.ts"
+}
