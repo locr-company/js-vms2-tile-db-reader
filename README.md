@@ -1,6 +1,7 @@
 [![Node.js version support][shield-node]][info-node]
 [![codecov](https://codecov.io/gh/locr-company/js-vms2-tile-db-reader/graph/badge.svg?token=P6F0rV99ym)](https://codecov.io/gh/locr-company/js-vms2-tile-db-reader)
 [![github_workflow_status](https://img.shields.io/github/actions/workflow/status/locr-company/js-progress/node.js.yml)](https://github.com/locr-company/js-vms2-tile-db-reader/actions/workflows/node.js.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=locr-company_js-vms2-tile-db-reader&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=locr-company_js-vms2-tile-db-reader)
 
 # 1. Installation
 

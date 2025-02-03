@@ -7,11 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2025-02-03
+## [0.1.1] - 2025-02-03
 
 ### Added
 
 - initial version
 
-[unreleased]: https://github.com/locr-company/js-vms2-tile-db-reader/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/locr-company/js-vms2-tile-db-reader/releases/tag/v0.1.0
+[unreleased]: https://github.com/locr-company/js-vms2-tile-db-reader/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/locr-company/js-vms2-tile-db-reader/releases/tag/v0.1.1
