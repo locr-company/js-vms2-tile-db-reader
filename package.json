@@ -20,7 +20,7 @@
     "author": "Ringo Leese <r.leese@locr.com>",
     "license": "MIT",
     "engines": {
-        "node": ">=16"
+        "node": ">=18"
     },
     "dependencies": {
         "better-sqlite3": "^11.8.1"
