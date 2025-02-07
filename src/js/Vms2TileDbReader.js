@@ -11,7 +11,10 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _a, _SQLite_db, _SQLite_getDetailZoom, _SQLite_getObjectType, _SQLite_packL;
 import BetterSqlite3 from 'better-sqlite3';
-class SQLite {
+/**
+ * The SQLite class is used to read data from a VMS2 tile database.
+ */
+export class SQLite {
     constructor(filename) {
         _SQLite_db.set(this, void 0);
         __classPrivateFieldSet(this, _SQLite_db, new BetterSqlite3(filename, { fileMustExist: true, readonly: true }), "f");
@@ -157,5 +160,4 @@ _a = SQLite, _SQLite_db = new WeakMap(), _SQLite_getDetailZoom = function _SQLit
     buffer.writeUInt32LE(value, 0);
     return buffer;
 };
-export { SQLite };
 //# sourceMappingURL=Vms2TileDbReader.js.map
