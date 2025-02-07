@@ -1,6 +1,6 @@
 {
     "name": "@locr-company/vms2-tile-db-reader",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "description": "A class for reading tile data from a database.",
     "type": "module",
     "repository": {
@@ -15,7 +15,7 @@
         "version": "npm run tsc && npm run test && ./update_deno.json_version.sh && git add deno.json"
     },
     "keywords": [
-        "progress"
+        "vms2"
     ],
     "author": "Ringo Leese <r.leese@locr.com>",
     "license": "MIT",
