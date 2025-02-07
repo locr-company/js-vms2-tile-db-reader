@@ -15,7 +15,7 @@
         "version": "npm run tsc && npm run test && ./update_deno.json_version.sh && git add deno.json"
     },
     "keywords": [
-        "progress"
+        "vms2"
     ],
     "author": "Ringo Leese <r.leese@locr.com>",
     "license": "MIT",
