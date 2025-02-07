@@ -1,5 +1,8 @@
 type Type = 'points' | 'lines' | 'polygons';
-declare class SQLite {
+/**
+ * The SQLite class is used to read data from a VMS2 tile database.
+ */
+export declare class SQLite {
     #private;
     constructor(filename: string);
     /**
@@ -17,4 +20,4 @@ declare class SQLite {
      */
     getRawData(x: number, y: number, z: number, key: string, value?: string, type?: Type): Buffer<ArrayBuffer>;
 }
-export { SQLite };
+export {};

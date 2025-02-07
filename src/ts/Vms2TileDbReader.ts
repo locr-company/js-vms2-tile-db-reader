@@ -2,7 +2,10 @@ import BetterSqlite3 from 'better-sqlite3';
 
 type Type = 'points'|'lines'|'polygons';
 
-class SQLite
+/**
+ * The SQLite class is used to read data from a VMS2 tile database.
+ */
+export class SQLite
 {
     readonly #db: BetterSqlite3.Database;
 
@@ -179,8 +182,4 @@ class SQLite
         buffer.writeUInt32LE(value, 0);
         return buffer;
     }
-}
-
-export {
-    SQLite
 }
