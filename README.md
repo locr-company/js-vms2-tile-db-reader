@@ -4,6 +4,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=locr-company_js-vms2-tile-db-reader&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=locr-company_js-vms2-tile-db-reader)
 [![github_tag](https://img.shields.io/github/v/tag/locr-company/js-vms2-tile-db-reader)](https://github.com/locr-company/js-vms2-tile-db-reader/tags)
 [![NPM Version](https://img.shields.io/npm/v/%40locr-company%2Fvms2-tile-db-reader)](https://www.npmjs.com/package/@locr-company/vms2-tile-db-reader)
+[![JSR Version](https://img.shields.io/jsr/v/%40locr-company/js-vms2-tile-db-reader)](https://jsr.io/@locr-company/js-vms2-tile-db-reader)
 
 # 1. Installation
 

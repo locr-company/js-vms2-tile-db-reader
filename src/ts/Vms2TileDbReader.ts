@@ -37,7 +37,30 @@ class SQLite
         return detailZoom;
     }
 
+    static #getObjectType(type: Type): number
+    {
+        switch (type) {
+            case 'points':
+                return 0;
+            case 'lines':
+                return 1;
+            case 'polygons':
+            default:
+                return 2;
+        }
+    }
+
     /**
+     * Get the specified data from the database. \
+     * This method can throw an exception, if the $type-parameter is invalid or if the internal database query failed.
+     *
+     * ```js
+     * import { SQLite } from '@locr-company/vms2-tile-db-reader';
+     *
+     * const tileDb = new SQLite('data/world.sqlite');
+     * const tileData = tileDb.getRawData(34686, 21566, 16, 'building', '*', 'polygons');
+     * ```
+     *
      * @returns {Buffer}
      */
     getRawData(x: number, y: number, z: number, key: string, value: string = '', type: Type = 'polygons'): Buffer<ArrayBuffer> {
@@ -57,20 +80,7 @@ class SQLite
         }
 
         const detailZoom = SQLite.#getDetailZoom(z, value, type);
-
-        let objectType;
-        switch (type) {
-            case 'points':
-                objectType = 0;
-                break;
-            case 'lines':
-                objectType = 1;
-                break;
-            case 'polygons':
-            default:
-                objectType = 2;
-                break;
-        }
+        const objectType = SQLite.#getObjectType(type);
 
         const maxTileZoom = 16;
         const buffers = [];

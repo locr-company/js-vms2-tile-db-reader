@@ -9,7 +9,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _a, _SQLite_db, _SQLite_getDetailZoom, _SQLite_packL;
+var _a, _SQLite_db, _SQLite_getDetailZoom, _SQLite_getObjectType, _SQLite_packL;
 import BetterSqlite3 from 'better-sqlite3';
 class SQLite {
     constructor(filename) {
@@ -17,6 +17,16 @@ class SQLite {
         __classPrivateFieldSet(this, _SQLite_db, new BetterSqlite3(filename, { fileMustExist: true, readonly: true }), "f");
     }
     /**
+     * Get the specified data from the database. \
+     * This method can throw an exception, if the $type-parameter is invalid or if the internal database query failed.
+     *
+     * ```js
+     * import { SQLite } from '@locr-company/vms2-tile-db-reader';
+     *
+     * const tileDb = new SQLite('data/world.sqlite');
+     * const tileData = tileDb.getRawData(34686, 21566, 16, 'building', '*', 'polygons');
+     * ```
+     *
      * @returns {Buffer}
      */
     getRawData(x, y, z, key, value = '', type = 'polygons') {
@@ -35,19 +45,7 @@ class SQLite {
                 break;
         }
         const detailZoom = __classPrivateFieldGet(_a, _a, "m", _SQLite_getDetailZoom).call(_a, z, value, type);
-        let objectType;
-        switch (type) {
-            case 'points':
-                objectType = 0;
-                break;
-            case 'lines':
-                objectType = 1;
-                break;
-            case 'polygons':
-            default:
-                objectType = 2;
-                break;
-        }
+        const objectType = __classPrivateFieldGet(_a, _a, "m", _SQLite_getObjectType).call(_a, type);
         const maxTileZoom = 16;
         const buffers = [];
         let numberOfTiles = 0;
@@ -144,6 +142,16 @@ _a = SQLite, _SQLite_db = new WeakMap(), _SQLite_getDetailZoom = function _SQLit
         detailZoom = 14;
     }
     return detailZoom;
+}, _SQLite_getObjectType = function _SQLite_getObjectType(type) {
+    switch (type) {
+        case 'points':
+            return 0;
+        case 'lines':
+            return 1;
+        case 'polygons':
+        default:
+            return 2;
+    }
 }, _SQLite_packL = function _SQLite_packL(value) {
     const buffer = Buffer.alloc(4);
     buffer.writeUInt32LE(value, 0);
