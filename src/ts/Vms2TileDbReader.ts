@@ -67,6 +67,8 @@ export class SQLite
      * @returns {Buffer}
      */
     getRawData(x: number, y: number, z: number, key: string, value: string = '', type: Type = 'polygons'): Buffer<ArrayBuffer> {
+        type = type.toLowerCase() as Type;
+
         switch (key) {
             case 'land':
             case 'terrain':
@@ -99,7 +101,7 @@ export class SQLite
             ' WHERE detail_zoom = :detail_zoom AND object_type = :object_type AND osm_key = :osm_key' +
             ' AND osm_value = :osm_value AND x >= :x_min AND x < :x_max  AND y >= :y_min AND y < :y_max AND z = :z';
 
-        for (let queryZ = 0; queryZ <= maxTileZoom; queryZ++) {
+        for (let queryZ: number = 0; queryZ <= maxTileZoom; queryZ++) {
             let query = '';
             let queryParams: any = {};
 

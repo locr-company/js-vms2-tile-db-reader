@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "locr-company",
+        "projectKey": "locr-company_js-vms2-tile-db-reader"
+    }
+}

@@ -33,6 +33,7 @@ export class SQLite {
      * @returns {Buffer}
      */
     getRawData(x, y, z, key, value = '', type = 'polygons') {
+        type = type.toLowerCase();
         switch (key) {
             case 'land':
             case 'terrain':
